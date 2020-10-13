@@ -25,7 +25,7 @@ data "aws_iam_policy_document" "bucket_policy" {
     effect = "Allow"
 
     actions = [
-      "s3:*"
+      "s3:GetObject"
     ]
 
     resources = [
