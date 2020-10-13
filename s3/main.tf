@@ -16,20 +16,18 @@ locals {
 data "aws_iam_policy_document" "bucket_policy" {
   statement {
     sid = "Stmt1539680321919"
+    effect = "Allow"
 
     principals {
       type        = "*"
       identifiers = ["*"]
     }
-
-    effect = "Allow"
-
     actions = [
-      "s3:GetObject"
+      "s3:GetObject",
+      "s3:PutObject"
     ]
-
     resources = [
-      format("arn:aws:s3:::%s", var.bucket_name)
+      format("arn:aws:s3:::%s/*", var.bucket_name)
     ]
   }
 }

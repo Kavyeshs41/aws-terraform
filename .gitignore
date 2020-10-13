@@ -1,4 +1,5 @@
 */terraform.*
 */.terraform/*
 .vscode/*
+*/.terraform.tfstate.lock.info
 ec2/*
